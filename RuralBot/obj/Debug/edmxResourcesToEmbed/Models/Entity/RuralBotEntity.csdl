@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RuralBotDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CasasTable">
+    <Key>
+      <PropertyRef Name="casaId" />
+    </Key>
+    <Property Name="casaId" Type="Int32" Nullable="false" />
+    <Property Name="lugar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numeroCamas" Type="Int32" Nullable="false" />
+    <Property Name="imagenUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="VentasTable" Relationship="Self.FK_CasaVentas" FromRole="CasasTable" ToRole="VentasTable" />
+  </EntityType>
+  <EntityType Name="UsersTable">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="userMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="VentasTable" Relationship="Self.FK_UserVentas" FromRole="UsersTable" ToRole="VentasTable" />
+  </EntityType>
+  <EntityType Name="VentasTable">
+    <Key>
+      <PropertyRef Name="ventaId" />
+    </Key>
+    <Property Name="ventaId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="casaId" Type="Int32" Nullable="false" />
+    <Property Name="inquilinos" Type="Int32" Nullable="false" />
+    <Property Name="fechaEntrada" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fechaSalida" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="CasasTable" Relationship="Self.FK_CasaVentas" FromRole="VentasTable" ToRole="CasasTable" />
+    <NavigationProperty Name="UsersTable" Relationship="Self.FK_UserVentas" FromRole="VentasTable" ToRole="UsersTable" />
+  </EntityType>
+  <Association Name="FK_CasaVentas">
+    <End Role="CasasTable" Type="Self.CasasTable" Multiplicity="1" />
+    <End Role="VentasTable" Type="Self.VentasTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CasasTable">
+        <PropertyRef Name="casaId" />
+      </Principal>
+      <Dependent Role="VentasTable">
+        <PropertyRef Name="casaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserVentas">
+    <End Role="UsersTable" Type="Self.UsersTable" Multiplicity="1" />
+    <End Role="VentasTable" Type="Self.VentasTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersTable">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="VentasTable">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RuralBotDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CasasTable" EntityType="Self.CasasTable" />
+    <EntitySet Name="UsersTable" EntityType="Self.UsersTable" />
+    <EntitySet Name="VentasTable" EntityType="Self.VentasTable" />
+    <AssociationSet Name="FK_CasaVentas" Association="Self.FK_CasaVentas">
+      <End Role="CasasTable" EntitySet="CasasTable" />
+      <End Role="VentasTable" EntitySet="VentasTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserVentas" Association="Self.FK_UserVentas">
+      <End Role="UsersTable" EntitySet="UsersTable" />
+      <End Role="VentasTable" EntitySet="VentasTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

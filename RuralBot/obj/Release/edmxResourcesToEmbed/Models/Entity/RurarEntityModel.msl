@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RuralDatabaseStoreContainer" CdmEntityContainer="RuralDB">
+    <EntitySetMapping Name="Casas">
+      <EntityTypeMapping TypeName="RuralDatabase.Casas">
+        <MappingFragment StoreEntitySet="Casas">
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="casaId" ColumnName="casaId" />
+          <ScalarProperty Name="nombreCasa" ColumnName="nombreCasa" />
+          <ScalarProperty Name="numeroCamas" ColumnName="numeroCamas" />
+          <ScalarProperty Name="lugarId" ColumnName="lugarId" />
+          <ScalarProperty Name="imagenUrl" ColumnName="imagenUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lugares">
+      <EntityTypeMapping TypeName="RuralDatabase.Lugares">
+        <MappingFragment StoreEntitySet="Lugares">
+          <ScalarProperty Name="lugarImagenUrl" ColumnName="lugarImagenUrl" />
+          <ScalarProperty Name="lugarId" ColumnName="lugarId" />
+          <ScalarProperty Name="lugarNombre" ColumnName="lugarNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RuralDatabase.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="loginId" ColumnName="loginId" />
+          <ScalarProperty Name="loginPassword" ColumnName="loginPassword" />
+          <ScalarProperty Name="userNation" ColumnName="userNation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="RuralDatabase.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="casaId" ColumnName="casaId" />
+          <ScalarProperty Name="numeroPersonas" ColumnName="numeroPersonas" />
+          <ScalarProperty Name="fechaEntrada" ColumnName="fechaEntrada" />
+          <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

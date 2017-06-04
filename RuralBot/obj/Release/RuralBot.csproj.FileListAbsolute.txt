@@ -1,0 +1,45 @@
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Bot Application.dll.config
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Bot Application.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Bot Application.pdb
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Autofac.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Chronic.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\EntityFramework.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\EntityFramework.SqlServer.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Newtonsoft.Json.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Net.Http.Formatting.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Web.Http.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Web.Http.WebHost.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Autofac.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\EntityFramework.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\EntityFramework.SqlServer.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\Newtonsoft.Json.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Net.Http.Formatting.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Web.Http.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\System.Web.Http.WebHost.xml
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\obj\Release\RuralBot.csprojResolveAssemblyReference.cache
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\obj\Release\Bot Application.dll
+C:\Users\Hector\Documents\Visual Studio 2017\Projects\RuralBot\RuralBot\obj\Release\Bot Application.pdb

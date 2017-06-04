@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="RuralDB-Web.config Connection String" description="RuralDB Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Models.Entity.RurarEntityModel.csdl|res://*/Models.Entity.RurarEntityModel.ssdl|res://*/Models.Entity.RurarEntityModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\RuralDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Hector\\Documents\\Visual\ Studio\ 2017\\Projects\\RuralBot\\RuralBot\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RuralDB']/@connectionString" />
+  </parameter>
+</parameters>

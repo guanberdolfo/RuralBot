@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RuralDatabase.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Casas">
+          <Key>
+            <PropertyRef Name="casaId" />
+          </Key>
+          <Property Name="casaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreCasa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroCamas" Type="int" Nullable="false" />
+          <Property Name="lugarId" Type="int" Nullable="false" />
+          <Property Name="imagenUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="precio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lugares">
+          <Key>
+            <PropertyRef Name="lugarId" />
+          </Key>
+          <Property Name="lugarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lugarNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="lugarImagenUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="loginId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="loginPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userNation" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="ventaId" />
+          </Key>
+          <Property Name="ventaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="casaId" Type="int" Nullable="false" />
+          <Property Name="numeroPersonas" Type="int" Nullable="false" />
+          <Property Name="fechaEntrada" Type="date" Nullable="false" />
+          <Property Name="fechaSalida" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CasaLugar">
+          <End Role="Lugares" Type="Self.Lugares" Multiplicity="1" />
+          <End Role="Casas" Type="Self.Casas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugares">
+              <PropertyRef Name="lugarId" />
+            </Principal>
+            <Dependent Role="Casas">
+              <PropertyRef Name="lugarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCasa">
+          <End Role="Casas" Type="Self.Casas" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Casas">
+              <PropertyRef Name="casaId" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="casaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasUser">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RuralDatabaseStoreContainer">
+          <EntitySet Name="Casas" EntityType="Self.Casas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lugares" EntityType="Self.Lugares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CasaLugar" Association="Self.FK_CasaLugar">
+            <End Role="Lugares" EntitySet="Lugares" />
+            <End Role="Casas" EntitySet="Casas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCasa" Association="Self.FK_VentasCasa">
+            <End Role="Casas" EntitySet="Casas" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasUser" Association="Self.FK_VentasUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RuralDatabase" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Casas">
+          <Key>
+            <PropertyRef Name="casaId" />
+          </Key>
+          <Property Name="casaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numeroCamas" Type="Int32" Nullable="false" />
+          <Property Name="lugarId" Type="Int32" Nullable="false" />
+          <Property Name="imagenUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Lugares" Relationship="Self.FK_CasaLugar" FromRole="Casas" ToRole="Lugares" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK_VentasCasa" FromRole="Casas" ToRole="Ventas" />
+          <Property Name="precio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lugares">
+          <Key>
+            <PropertyRef Name="lugarId" />
+          </Key>
+          <Property Name="lugarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lugarNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Casas" Relationship="Self.FK_CasaLugar" FromRole="Lugares" ToRole="Casas" />
+          <Property Name="lugarImagenUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="loginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="loginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userNation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK_VentasUser" FromRole="Users" ToRole="Ventas" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="ventaId" />
+          </Key>
+          <Property Name="ventaId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="casaId" Type="Int32" Nullable="false" />
+          <Property Name="numeroPersonas" Type="Int32" Nullable="false" />
+          <Property Name="fechaEntrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fechaSalida" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Casas" Relationship="Self.FK_VentasCasa" FromRole="Ventas" ToRole="Casas" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_VentasUser" FromRole="Ventas" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_CasaLugar">
+          <End Role="Lugares" Type="Self.Lugares" Multiplicity="1" />
+          <End Role="Casas" Type="Self.Casas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugares">
+              <PropertyRef Name="lugarId" />
+            </Principal>
+            <Dependent Role="Casas">
+              <PropertyRef Name="lugarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCasa">
+          <End Role="Casas" Type="Self.Casas" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Casas">
+              <PropertyRef Name="casaId" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="casaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasUser">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RuralDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Casas" EntityType="Self.Casas" />
+          <EntitySet Name="Lugares" EntityType="Self.Lugares" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" />
+          <AssociationSet Name="FK_CasaLugar" Association="Self.FK_CasaLugar">
+            <End Role="Lugares" EntitySet="Lugares" />
+            <End Role="Casas" EntitySet="Casas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCasa" Association="Self.FK_VentasCasa">
+            <End Role="Casas" EntitySet="Casas" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasUser" Association="Self.FK_VentasUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RuralDatabaseStoreContainer" CdmEntityContainer="RuralDB">
+          <EntitySetMapping Name="Casas">
+            <EntityTypeMapping TypeName="RuralDatabase.Casas">
+              <MappingFragment StoreEntitySet="Casas">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="casaId" ColumnName="casaId" />
+                <ScalarProperty Name="nombreCasa" ColumnName="nombreCasa" />
+                <ScalarProperty Name="numeroCamas" ColumnName="numeroCamas" />
+                <ScalarProperty Name="lugarId" ColumnName="lugarId" />
+                <ScalarProperty Name="imagenUrl" ColumnName="imagenUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lugares">
+            <EntityTypeMapping TypeName="RuralDatabase.Lugares">
+              <MappingFragment StoreEntitySet="Lugares">
+                <ScalarProperty Name="lugarImagenUrl" ColumnName="lugarImagenUrl" />
+                <ScalarProperty Name="lugarId" ColumnName="lugarId" />
+                <ScalarProperty Name="lugarNombre" ColumnName="lugarNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="RuralDatabase.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="loginId" ColumnName="loginId" />
+                <ScalarProperty Name="loginPassword" ColumnName="loginPassword" />
+                <ScalarProperty Name="userNation" ColumnName="userNation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ventas">
+            <EntityTypeMapping TypeName="RuralDatabase.Ventas">
+              <MappingFragment StoreEntitySet="Ventas">
+                <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="casaId" ColumnName="casaId" />
+                <ScalarProperty Name="numeroPersonas" ColumnName="numeroPersonas" />
+                <ScalarProperty Name="fechaEntrada" ColumnName="fechaEntrada" />
+                <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

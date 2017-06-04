@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RuralBDStoreContainer" CdmEntityContainer="RuralBotDBEntities">
+    <EntitySetMapping Name="CasasTable">
+      <EntityTypeMapping TypeName="RuralBD.CasasTable">
+        <MappingFragment StoreEntitySet="CasasTable">
+          <ScalarProperty Name="casaId" ColumnName="casaId" />
+          <ScalarProperty Name="lugar" ColumnName="lugar" />
+          <ScalarProperty Name="numeroCamas" ColumnName="numeroCamas" />
+          <ScalarProperty Name="imagenUrl" ColumnName="imagenUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersTable">
+      <EntityTypeMapping TypeName="RuralBD.UsersTable">
+        <MappingFragment StoreEntitySet="UsersTable">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userMail" ColumnName="userMail" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userFullName" ColumnName="userFullName" />
+          <ScalarProperty Name="userNationality" ColumnName="userNationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentasTable">
+      <EntityTypeMapping TypeName="RuralBD.VentasTable">
+        <MappingFragment StoreEntitySet="VentasTable">
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="casaId" ColumnName="casaId" />
+          <ScalarProperty Name="inquilinos" ColumnName="inquilinos" />
+          <ScalarProperty Name="fechaEntrada" ColumnName="fechaEntrada" />
+          <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
